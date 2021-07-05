@@ -4,6 +4,7 @@ from core.views import PostListView, PostDetailView, PostCreateView, PostUpdateV
 
 urlpatterns=[
     path('', views.Index, name='Index'),
+    path('register', views.register , name='register'),
     path('accounts/', include('allauth.urls')),
     path('list', PostListView.as_view(), name='list'),
     path('create', PostCreateView.as_view(), name='create'),
@@ -11,4 +12,5 @@ urlpatterns=[
     path('<slug>/update/', PostUpdateView.as_view(), name='update'),
     path('<slug>/delete/', PostDeleteView.as_view(), name='delete'),
     path('like/<slug>/', like, name='like'),
+    
 ]

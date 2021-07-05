@@ -3,6 +3,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post , PostVista, Comentarios, Like
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .forms import PostForm, CommentForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 
 class PostListView(ListView):
     model = Post
@@ -77,4 +79,15 @@ def like(request, slug):
         return redirect('detail', slug=slug)
     Like.objects.create(user=request.user, post=post)
     return redirect('detail', slug=slug)
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            messages.succes(request, f'User {username} creado')
+    else:
+        form = UserCreationForm()
+    context = { 'form': form }
+    return render(request, 'social/register.html', context)
 
