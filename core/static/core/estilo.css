@@ -1,0 +1,75 @@
+.jumbotron {
+    background-image: url(https://images6.alphacoders.com/345/thumb-1920-345001.jpg);
+    background-size: cover;
+    height: 100%;
+}
+
+
+.texto {
+    text-align: center;
+    padding-top: 20%;
+}
+
+.fondo {
+    background-color: black;
+    opacity: 0.7;
+    
+}
+
+.cuadrado{
+    height: 300px;
+    width: 300px;
+}
+.margen {
+    margin: 20px;
+}
+
+.monitas {
+    /* align-items: center; */
+    margin: 10px;
+    width: auto;
+    height: 300px; 
+    object-fit: cover;
+}
+
+.cards{
+    width: auto!important; 
+    height: 500px!important;
+}
+
+@media (min-width: 768px) {
+    .cards {
+        width: auto!important;
+        height: 550px!important;
+    }
+}
+  @media (max-width: 576px) {
+    .cards {
+        width: auto!important; 
+        height: 500px!important;
+    }
+ }
+.carrusel{
+    background-color: rgb(170, 170, 170); 
+    color: black;
+     opacity: 0.7; 
+     border-radius: 50px;
+}
+
+.inf-content{
+    border:1px solid #DDDDDD;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+}	
+
+.waton{
+    width: 100%;
+    height: 200px;
+}
+
+.derecha{
+    
+    right: 0px;
+}

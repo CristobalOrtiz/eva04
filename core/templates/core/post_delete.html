@@ -1,0 +1,13 @@
+{% extends "includes/base.html" %}
+{% block body %}
+
+<div class="container">
+
+    {% for object in object_list %}
+        {{ object.titulo }}
+    {% endfor %}
+</div>
+
+
+{% include "includes/footer.html" %}
+{% endblock %}

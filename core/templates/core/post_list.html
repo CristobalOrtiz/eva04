@@ -1,0 +1,33 @@
+{% extends "includes/base.html" %}
+{% block body %}
+
+<div class="container">
+<div class="row">
+    {% for object in object_list %}
+  
+        <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card m-4 cards">
+        <img src="{{ object.thumbnail.url }}" class="monitas img-fluid" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{ object.titulo }}</h5>
+        <p class="card-text">{{ object.contenido|truncatechars:40 }}</p>
+        <p>
+        <span><i class="fas fa-thumbs-up">  </i>{{ object.get_like_count }}</span>
+        <span><i class="fas fa-eye ">  </i>{{ object.get_view_count }}</span>
+        <span><i class="fas fa-comments">  </i>{{ object.get_comment_count }}</span>
+        </p>
+        <p class="card-text">
+           Posteado {{ object.fechaP|timesince }} atras
+        </p>
+        <a href="{{ object.get_absolute_url }}" class="btn btn-dark">Ver post</a>
+        </div>
+        </div>
+        </div>
+     
+    {% endfor %}
+</div>
+</div>
+
+
+{% include "includes/footer.html" %}
+{% endblock %}

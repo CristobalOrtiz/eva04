@@ -1,0 +1,17 @@
+{% extends "includes/base.html" %}
+{% block body %}
+
+<div class="container">
+
+    <h1>{{ view_type }} publicacion</h1>
+    <form method="POST" enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-dark" type='submit'>{{ view_type|title }}</button>
+    </form>
+
+</div>
+
+
+{% include "includes/footer.html" %}
+{% endblock %}
